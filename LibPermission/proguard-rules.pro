@@ -19,9 +19,32 @@
 # If you keep the line number information, uncomment this to
 # hide the original source file name.
 #-renamesourcefileattribute SourceFile
--keep class com.newolf.**{public *;}
--keep class com.newolf.*$*{public *;}
+-dontoptimize
+-dontusemixedcaseclassnames
+-keepattributes *Annotation*,Signature,InnerClasses,EnclosingMethod
+-dontpreverify
+-verbose
+-dontnote com.android.vending.licensing.ILicensingService,com.google.vending.licensing.ILicensingService,com.google.android.vending.licensing.ILicensingService,android.support.**
+-dontwarn android.support.**
+-ignorewarnings
 
--keep interface com.newolf.**{public *;}
--keep interface com.newolf.*$*{public *;}
+-dontshrink#混淆jar的时候一定要配置，不然会把没有用到的代码全部remove   我本来封装一个jar就是给别人调用的，全部删掉就没有东西了
+
+-keep class com.newolf.**{
+    public <fields>;
+    public <methods>;
+    }
+-keep class com.newolf.*$*{
+    public <fields>;
+    public <methods>;
+    }
+
+-keep interface com.newolf.**{
+     public <fields>;
+     public <methods>;
+    }
+-keep interface com.newolf.*$*{
+    public <fields>;
+    public <methods>;
+    }
 -dontwarn com.newolf.**

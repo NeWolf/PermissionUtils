@@ -1,6 +1,19 @@
--keep class com.newolf.**{public *;}
--keep class com.newolf.*$*{public *;}
+-keep class com.newolf.**{
+    public <fields>;
+    public <methods>;
+    }
+-keep class com.newolf.*$*{
+    public <fields>;
+    public <methods>;
+    }
 
--keep interface com.newolf.**{public *;}
--keep interface com.newolf.*$*{public *;}
+-keep interface com.newolf.**{
+     public <fields>;
+     public <methods>;
+    }
+-keep interface com.newolf.*$*{
+    public <fields>;
+    public <methods>;
+    }
+-dontwarn com.newolf.**
 -dontwarn com.newolf.**
