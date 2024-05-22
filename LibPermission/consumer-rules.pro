@@ -17,3 +17,7 @@
     }
 -dontwarn com.newolf.**
 -dontwarn com.newolf.**
+# keep所有类的protected成员
+-keep public class * {
+      public protected *;
+}

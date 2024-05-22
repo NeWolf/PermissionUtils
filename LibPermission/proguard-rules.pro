@@ -14,11 +14,11 @@
 
 # Uncomment this to preserve the line number information for
 # debugging stack traces.
-#-keepattributes SourceFile,LineNumberTable
+-keepattributes SourceFile,LineNumberTable
 
 # If you keep the line number information, uncomment this to
 # hide the original source file name.
-#-renamesourcefileattribute SourceFile
+-renamesourcefileattribute SourceFile
 -dontoptimize
 -dontusemixedcaseclassnames
 -keepattributes *Annotation*,Signature,InnerClasses,EnclosingMethod
@@ -48,3 +48,7 @@
     public <methods>;
     }
 -dontwarn com.newolf.**
+# keep所有类的protected成员
+-keep public class * {
+      public protected *;
+}
